@@ -16,7 +16,7 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1588231759249_9243';
 
   // add your middleware config here
-  config.middleware = [];
+  config.middleware = ['robot'];
 
   // config.view = {
   //   defaultViewEngine: 'nunjucks',
@@ -38,6 +38,9 @@ module.exports = appInfo => {
       mapping: {
         '.tpl': 'nunjucks',
       },
+    },
+    robot: {
+      ua: [/Baiduspider/i,]
     }
   };
 
