@@ -1,14 +1,21 @@
 # demo
 
 ## 对象关系
-* app
+* app 在一个应用中，只会实例化一个，它继承自 Koa.Application
     * router
     * controller
         * app
-        * ctx
+        * ctx 请求级别的对象
             * service
+            * helper
+            * request & response  Request 是一个请求级别的对象，继承自 Koa.Request
+        * service - 应用所有的 service。
+        * logger - 为当前 controller 封装的 logger 对象。
     * config
-    * loggers
+    * logger
+
+### config
+我们可以通过 app.config 从 Application 实例上获取到 config 对象，也可以在 Controller, Service, Helper 的实例上通过 this.config 获取到 config 对象。
 
 
 ## 简单封装 eggjs 自动生成增删改查接口
